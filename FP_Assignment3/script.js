@@ -11,7 +11,7 @@ const expenses = [
 const expensesListContainer = document.getElementById("expenselist");
 const filterListContainer = document.getElementById("expensefilter");
 const totalListContainer = document.getElementById("check")
-const renderList = (check)=> {
+const renderList = (check)=> {``
     const filterExp = expenses.filter((exp) => check ? exp.amount > 100 : exp)
     const expenseList = filterExp.map((exp) => `<li>
     <strong>Name:</strong>${exp.name}<br>
