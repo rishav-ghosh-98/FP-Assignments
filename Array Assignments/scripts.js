@@ -33,3 +33,21 @@ const filterNames = users.reduce((acc,curr) => {
 console.log(filterNames);
 
 const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+const filterFruits = fruits.reduce((acc,curr)=> {acc[curr] = (acc[curr] || 0)+1;
+    return acc;
+}
+,{})
+console.log(filterFruits);
+
+const pets = [
+  { name: 'Spot', type: 'dog' },
+  { name: 'Mittens', type: 'cat' },
+  { name: 'Rover', type: 'dog' },
+  { name: 'Whiskers', type: 'cat' }
+];
+
+// expected result:
+// {
+//   dog: [ { name: 'Spot', type: 'dog' }, { name: 'Rover', type: 'dog' } ],
+//   cat: [ { name: 'Mittens', type: 'cat' }, { name: 'Whiskers', type: 'cat' } ]
+// }
