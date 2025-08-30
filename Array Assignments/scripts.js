@@ -167,7 +167,52 @@ const participation = [
 
 // Expected Output:
 // {
-//   Rahul: 11,
+//   Rahul: 
 //   Anjali: 9
 // }
 
+const filterPart = participation.reduce((acc,curr) => {
+    if(acc[curr.name]){
+        acc[curr.name]+= curr.hours
+    }else{
+        acc[curr.name] = curr.hours
+    }
+    return acc;
+},{})
+
+let result = {}
+for (let name in filterPart){
+    if(filterPart[name] > 8){
+        result[name] = filterPart[name]
+    }
+}
+console.log(result)
+
+
+const sales1 = [
+  { executive: 'Rohit', amount: 5000 },
+  { executive: 'Sneha', amount: 4000 },
+  { executive: 'Rohit', amount: 3000 },
+  { executive: 'Sneha', amount: 1000 },
+  { executive: 'Arjun', amount: 6000 }
+];
+
+// Expected Output
+{
+  Rohit: 8000
+}
+const filterSales1 =  sales1.reduce((acc,curr) => {
+    if(acc[curr.executive]){
+        acc[curr.executive]+= curr.amount
+    }else{
+        acc[curr.executive]= curr.amount
+    }
+    return acc
+},{})
+const output = {}
+for(let exec in filterSales1){
+    if(filterSales1[exec] > 7000){
+        output[exec] = filterSales1[exec] 
+    }
+}
+console.log(output)
